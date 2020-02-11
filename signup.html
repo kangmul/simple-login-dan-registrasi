@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Please !</title>
+
+    <!-- mystyle css -->
+    <link rel="stylesheet" href="mystyle.css">
+
+    <!-- font -->
+
+</head>
+
+<body>
+    <form class="signup-form">
+        <h1>Create Account</h1>
+        <div class="signup">
+            <input type="text" name="fullname" id="fullname">
+            <span data-placeholder="fullname"></span>
+        </div>
+        <div class="error"></div>
+
+        <div class="signup">
+            <input type="text" name="email" id="email">
+            <span data-placeholder="email"></span>
+        </div>
+        <div class="error"></div>
+
+        <div class="signup">
+            <input type="text" name="username" id="username">
+            <span data-placeholder="username"></span>
+        </div>
+        <div class="error"></div>
+
+        <div class="signup">
+            <input type="password" name="password" id="password">
+            <span data-placeholder="password"></span>
+        </div>
+        <div class="error"></div>
+
+        <div class="signup">
+            <input type="password" class="password2" name="password2">
+            <span data-placeholder="repeat password"></span>
+        </div>
+
+
+        <input type="button" class="creacc" value="create account">
+
+        <div class="bottom-text">
+            Already have account? <a href="index.html">Login</a>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="assets/jquery/jquery.js"></script>
+
+    <script type="text/javascript">
+        $('.signup input').on('focus', function () {
+            $(this).addClass('focus');
+        });
+
+        $('.signup input').on('blur', function () {
+            if ($(this).val() == "")
+                $(this).removeClass('focus');
+        });
+
+        $('.creacc').on('click', function () {
+            var fullname = $('#fullname').val();
+            var username = $('#username').val();
+            var email = $('#email').val();
+            var pass = $('#password').val();
+            console.log(fullname, username, email, pass);
+        });
+    </script>
+</body>
+
+</html>

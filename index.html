@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Please !</title>
+
+    <!-- mystyle css -->
+    <link rel="stylesheet" href="mystyle.css">
+
+
+</head>
+
+<body>
+    <form class="login-form">
+        <h1>Login</h1>
+        <div class="txtb">
+            <input type="text" name="username" id="username">
+            <span data-placeholder="username"></span>
+        </div>
+        <div class="error"></div>
+
+        <div class="txtb">
+            <input type="password" name="password" id="password">
+            <span data-placeholder="password"></span>
+        </div>
+        <div class="error"></div>
+
+        <input type="button" class="logbtn" value="Login">
+
+        <div class="bottom-text">
+            Don't have account? <a href="signup.html">Sign up</a>
+        </div>
+    </form>
+
+    <script type="text/javascript" src="assets/jquery/jquery.js"></script>
+
+    <script type="text/javascript">
+        $('.txtb input').on('focus', function () {
+            $(this).addClass('focus');
+        });
+
+        $('.txtb input').on('blur', function () {
+            if ($(this).val() == "")
+                $(this).removeClass('focus');
+        });
+
+        $('.logbtn').on('click', function () {
+            var password = $('#password').val();
+            var username = $('#username').val();
+            console.log(username, password);
+        });
+    </script>
+</body>
+
+</html>
